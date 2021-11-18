@@ -8,3 +8,5 @@ make clean &&
 export u=${HOME}
 sudo setcap 'cap_net_raw,cap_net_admin+eip' ${u}/GoldenCheetah-`git describe --tags`
 sudo getcap  ${u}/GoldenCheetah*
+
+diff -w /etc/udev/rules.d/52-garmin-usb.rules 52-garmin-usb.rules
