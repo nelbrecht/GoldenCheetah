@@ -1,0 +1,138 @@
+Installation on manjaro linux has proven to be basically easy by
+reading the linux instructions and doing some simple follow-ups.
+
+The main thing to solve is that manjaro is a distro that very closely
+paces the qt versions of GoldenCheetah, but at the same time outpaces
+it in regards to bison and other build infrastructure.
+
+It has worked on both the Pinebook PRO and the Raspberry 4 for me. The
+latter can be done with the Raspberry imager, hinted to a downloaded
+manjaro for rasbpi, but it will basically just ignore WiFi setup
+etc. from that tool.
+
+After installation, these are some packages needed to compile
+GoldenCheetah
+
+- ssh, git
+- g++ (I did not try yet CLANG)
+- make, bison, flex, base-devel
+- qt5-serialport, qt5-connectivity, qt5-charts, vlc, phonon-qt5-vlc,
+- libusb
+
+systemctl enable --now sshd # this might help
+git clone git@github.com:nelbrecht/GoldenCheetah.git
+cd GoldenCheetah && git checkout yaccfix
+./local-build.sh
+
+References
+
+The list of explicitly installed packages (pacman -Qe) that worked is:
+
+alsa-utils 1.2.11-1
+ark 23.08.5-1
+autoconf 2.72-1
+automake 1.16.5-2
+base 3-2
+base-devel 1-1
+bash-completion 2.11-3
+bison 3.8.2-6
+bluedevil 1:5.27.10-3
+breeze 5.27.10-1
+breeze-gtk 5.27.10-1
+btrfs-progs 6.7.1-1
+dhcpcd 10.0.6-1
+dolphin 23.08.5-1
+dolphin-plugins 23.08.5-1
+drkonqi 5.27.10-1
+emacs 29.2-1
+exfatprogs 1.2.2-1
+f2fs-tools 1.16.0-2
+firefox 123.0-1
+firefox-ublock-origin 1.56.0-1
+firewalld 2.1.1-1
+firmware-raspberrypi 20240117-1
+flex 2.6.4-5
+generic-post-install 20220704-1
+gsl 2.7.1-3
+gst-plugin-pipewire 1:1.0.3-1
+gwenview 23.08.5-1
+inxi 3.3.37.1-1
+irqbalance 1.9.3-2
+kate 23.08.5-1
+kcalc 23.08.5-1
+kde-gtk-config 5.27.10-1
+kinfocenter 5.27.10-1
+konsole 23.08.5-1
+kscreen 5.27.10-1
+kscreenlocker 5.27.10-1
+kwallet-pam 5.27.10-1
+kwayland-integration 5.27.10-1
+kwin 5.27.10-2
+linux-firmware 20240220.97b693d2-1
+linux-rpi4 6.6.33-2
+linux-rpi4-headers 6.6.33-2
+make 4.4.1-2
+man-db 2.12.0-1
+man-pages 6.06-2
+manjaro-arm-flasher 0.10-1
+manjaro-arm-installer 1.5.3-1
+manjaro-arm-wallpapers 20220109-1
+manjaro-hotfixes 2018.08-6
+manjaro-icons 20200213-1
+manjaro-release 24.03-1
+manjaro-settings-manager 0.5.7-8
+manjaro-system 20230303-1
+matray 1.1.4-1
+mpv 1:0.37.0-2
+nano 7.2-1
+ncdu 2.3-1
+networkmanager-openvpn 1.10.2-3
+noto-fonts 1:24.2.1-1
+ntfs-3g 2022.10.3-1
+okular 23.08.2-2
+openresolv 3.13.2-2
+openssh 9.6p1-3
+pacman 6.0.2-2
+pamac-gtk 11.7.1-1
+pamac-tray-icon-plasma 0.1.3-2
+parted 3.6-1
+phonon-qt5-vlc 0.12.0-2
+pipewire-alsa 1:1.0.3-1
+pipewire-pulse 1:1.0.3-1
+pipewire-zeroconf 1:1.0.3-1
+plasma-desktop 5.27.10-1
+plasma-firewall 5.27.10-1
+plasma-nm 5.27.10-1
+plasma-pa 5.27.10-1
+plasma-systemmonitor 5.27.10-1
+plasma-vault 5.27.10-1
+plasma-wayland-session 5.27.10-2
+plasma-workspace 5.27.10-2
+plasma5-themes-breath 23.0.0-1
+plymouth 22.02.122-14
+plymouth-theme-manjaro 1-1
+power-profiles-daemon 0.13-1
+powerdevil 5.27.10-2
+qt5-charts 5.15.12-1
+qt5-connectivity 5.15.12+kde+r6-1
+qt5-serialport 5.15.12-1
+raspberrypi-bootloader 20240612-2
+rpi4-post-install 20240422-1
+sddm 0.20.0-4
+sddm-breath-theme 23.0.0-1
+sddm-kcm 5.27.10-1
+spectacle 23.08.5-1
+sudo 1.9.15.p5-1
+systemd 255.3-1
+systemsettings 5.27.10-1
+ttf-bitstream-vera 1.10-15
+usbutils 017-1
+wget 1.21.4-1
+wireless-regdb 2024.01.23-1
+wireplumber 0.4.14-0.1
+wpa_supplicant 2:2.10-8
+wqy-microhei 0.2.0_beta-11
+xdg-user-dirs 0.18-1
+xorg-server 21.1.11-1
+xorg-xinit 1.4.2-1
+zswap-arm 1-1
